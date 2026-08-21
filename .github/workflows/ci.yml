@@ -28,5 +28,8 @@ jobs:
       - name: Fetch Roblox type definitions
         run: curl -o globalTypes.d.luau https://raw.githubusercontent.com/JohnnyMorganz/luau-lsp/main/scripts/globalTypes.d.luau
 
+      - name: Generate Rojo sourcemap
+        run: rojo sourcemap -o sourcemap.json
+
       - name: Typecheck
-        run: luau_lsp analyze --definitions=globalTypes.d.luau src
+        run: luau_lsp analyze --definitions=globalTypes.d.luau --sourcemap=sourcemap.json src
