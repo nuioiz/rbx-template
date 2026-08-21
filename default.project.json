@@ -1,0 +1,98 @@
+{
+  "name": "Game",
+  "emitLegacyScripts": false,
+  "tree": {
+    "$className": "DataModel",
+
+    "ReplicatedFirst": {
+      "Client": {
+        "$path": "src/client"
+      }
+    },
+
+    "ReplicatedStorage": {
+      "Shared": {
+        "$path": "src/shared"
+      },
+      "Packages": {
+        "$path": "roblox_packages"
+      }
+    },
+
+    "ServerScriptService": {
+      "Server": {
+        "$path": "src/server"
+      }
+    },
+
+    "Lighting": {
+      "$properties": {
+        "Ambient": [0.27450980392156865, 0.27450980392156865, 0.27450980392156865],
+        "Brightness": 3,
+        "ClockTime": 14.5,
+        "EnvironmentDiffuseScale": 1,
+        "EnvironmentSpecularScale": 1,
+        "GeographicLatitude": 0,
+        "GlobalShadows": true,
+        "OutdoorAmbient": [0.27450980392156865, 0.27450980392156865, 0.27450980392156865],
+        "Technology": "Future"
+      },
+      "Atmosphere": {
+        "$className": "Atmosphere",
+        "$properties": {
+          "Color": [0.7803921568627451, 0.7803921568627451, 0.7803921568627451],
+          "Decay": [0.41568627450980394, 0.4392156862745098, 0.49019607843137253],
+          "Density": 0.3,
+          "Offset": 0.25
+        }
+      },
+      "Bloom": {
+        "$className": "BloomEffect",
+        "$properties": {
+          "Intensity": 1,
+          "Threshold": 2
+        }
+      },
+      "Sky": {
+        "$className": "Sky",
+        "$properties": {
+          "MoonTextureContent": "rbxassetid://6444320592",
+          "SkyboxBackContent": "rbxassetid://6444884337",
+          "SkyboxDownContent": "rbxassetid://6444884785",
+          "SkyboxFrontContent": "rbxassetid://6444884337",
+          "SkyboxLeftContent": "rbxassetid://6444884337",
+          "SkyboxRightContent": "rbxassetid://6444884337",
+          "SkyboxUpContent": "rbxassetid://6412503613",
+          "SunAngularSize": 11,
+          "SunTextureContent": "rbxassetid://6196665106"
+        }
+      },
+      "SunRays": {
+        "$className": "SunRaysEffect",
+        "$properties": {
+          "Intensity": 0.01,
+          "Spread": 0.1
+        }
+      }
+    },
+
+    "Players": {
+      "$properties": {
+        "CharacterAutoLoads": false
+      }
+    },
+
+    "SoundService": {
+      "$properties": {
+        "DefaultListenerLocation": "Camera",
+        "RespectFilteringEnabled": true
+      }
+    },
+
+    "Workspace": {
+      "$properties": {
+        "LuauTypeCheckMode": "Strict"
+      }
+    }
+  }
+}

@@ -1,0 +1,30 @@
+name = "username/game"
+version = "0.1.0"
+private = true
+
+[target]
+environment = "roblox"
+
+[scripts]
+roblox_sync_config_generator = ".pesde/scripts/roblox_sync_config_generator.luau"
+sourcemap_generator = ".pesde/scripts/sourcemap_generator.luau"
+
+[indices]
+default = "https://github.com/pesde-pkg/index"
+
+[wally_indices]
+default = "https://github.com/UpliftGames/wally-index"
+
+[dependencies]
+iris = { wally = "sirmallard/iris", version = "^2.5.1" }
+
+[dev_dependencies]
+asphalt = { name = "pesde/asphalt", version = "^2.0.1", target = "lune" }
+rojo = { name = "pesde/rojo", version = "^7.7.0", target = "lune" }
+scripts = { name = "pesde/scripts_rojo", version = "^0.2.0", target = "lune" }
+selene = { name = "pesde/selene", version = "^0.31.0", target = "lune" }
+stylua = { name = "pesde/stylua", version = "^2.5.2", target = "lune" }
+
+[engines]
+pesde = "^0.7.3"
+lune = "^0.10.5"

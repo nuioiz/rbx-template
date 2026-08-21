@@ -1,0 +1,55 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - v*
+
+env:
+  BUILD_NAME: "Game-${{ github.ref_name }}.rbxl"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Setup pesde
+        uses: lumin-org/setup-pesde@v0.4.1
+
+      - name: Install dependencies
+        run: pesde install --locked
+
+      - name: Sync assets
+        run: asphalt sync
+        env:
+          ASPHALT_API_KEY: ${{ secrets.ASPHALT_API_KEY }}
+
+      - name: Build place file
+        run: rojo build default.project.json -o "$BUILD_NAME"
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: rbxl-build
+          path: ${{ env.BUILD_NAME }}
+
+  release:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Download build artifact
+        uses: actions/download-artifact@v8
+        with:
+          name: rbxl-build
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v3
+        with:
+          files: ${{ env.BUILD_NAME }}
+          generate_release_notes: true

@@ -1,0 +1,12 @@
+[creator]
+type = "user"
+id = YOUR_ID
+
+[codegen]
+style = "nested"
+strip_extensions = true
+content = true
+
+[inputs.assets]
+path = "assets/**/*"
+output_path = "src/client"

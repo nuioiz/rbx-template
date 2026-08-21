@@ -1,0 +1,25 @@
+# Build
+/*.rbxl
+/*.rbxlx
+
+# Studio
+/*.rbxl.lock
+/*.rbxlx.lock
+
+# Sourcemap
+/sourcemap.json
+
+# Pesde
+/.pesde/
+/luau_packages/
+/lune_packages/
+/roblox_packages/
+/roblox_server_packages/
+
+# Asphalt
+/.asphalt-debug/
+src/client/Assets.luau
+src/client/Assets.d.ts
+
+# Secrets
+/.env
