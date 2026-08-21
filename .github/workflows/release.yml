@@ -23,7 +23,9 @@ jobs:
         run: pesde install --locked
 
       - name: Sync assets
-        run: asphalt sync
+        run: |
+          asphalt sync cloud --dry-run
+          asphalt sync
         env:
           ASPHALT_API_KEY: ${{ secrets.ASPHALT_API_KEY }}
 
