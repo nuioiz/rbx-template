@@ -4,4 +4,4 @@ local function add(a: number, b: number): Color3
 	return a + b
 end
 
-local result: buffer = add(1, "2")
+add(1, "2")
