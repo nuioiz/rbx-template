@@ -24,3 +24,9 @@ jobs:
 
       - name: Check formatting
         run: stylua -c .
+
+      - name: Fetch Roblox type definitions
+        run: curl -o globalTypes.d.luau https://raw.githubusercontent.com/JohnnyMorganz/luau-lsp/main/scripts/globalTypes.d.luau
+
+      - name: Typecheck
+        run: luau_lsp analyze --definitions=globalTypes.d.luau src
