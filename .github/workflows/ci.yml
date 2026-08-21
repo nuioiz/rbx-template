@@ -21,3 +21,6 @@ jobs:
 
       - name: Lint
         run: selene src
+
+      - name: Check formatting
+        run: stylua -c .
