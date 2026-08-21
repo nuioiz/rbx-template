@@ -23,7 +23,7 @@ jobs:
         run: pesde install --locked
 
       - name: Generate network files
-        run: blink network.blink
+        run: blink network
 
       - name: Sync assets
         run: |
@@ -33,7 +33,7 @@ jobs:
           ASPHALT_API_KEY: ${{ secrets.ASPHALT_API_KEY }}
 
       - name: Build place file
-        run: rojo build default.project.json -o "$BUILD_NAME"
+        run: rojo build -o $BUILD_NAME
 
       - name: Upload build artifact
         uses: actions/upload-artifact@v7
@@ -53,7 +53,7 @@ jobs:
         with:
           name: rbxl-build
 
-      - name: Create GitHub Release
+      - name: Create Github Release
         uses: softprops/action-gh-release@v3
         with:
           files: ${{ env.BUILD_NAME }}

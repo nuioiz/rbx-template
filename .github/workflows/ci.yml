@@ -25,11 +25,11 @@ jobs:
       - name: Check formatting
         run: stylua -c .
 
-      - name: Fetch Roblox type definitions
+      - name: Fetch type definitions
         run: curl -o globalTypes.d.luau https://raw.githubusercontent.com/JohnnyMorganz/luau-lsp/main/scripts/globalTypes.d.luau
 
       - name: Generate network files
-        run: blink network.blink
+        run: blink network
 
       - name: Sync assets
         run: |
@@ -38,11 +38,11 @@ jobs:
         env:
           ASPHALT_API_KEY: ${{ secrets.ASPHALT_API_KEY }}
 
-      - name: Generate Rojo sourcemap
+      - name: Generate sourcemap
         run: rojo sourcemap -o sourcemap.json
 
       - name: Typecheck
         run: luau_lsp analyze --definitions=globalTypes.d.luau --sourcemap=sourcemap.json src
 
       - name: Build place file
-        run: rojo build default.project.json -o "build.rbxl"
+        run: rojo build -o build.rbxl
