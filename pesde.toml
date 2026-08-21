@@ -16,7 +16,6 @@ default = "https://github.com/pesde-pkg/index"
 default = "https://github.com/UpliftGames/wally-index"
 
 [dependencies]
-iris = { wally = "sirmallard/iris", version = "^2.5.1" }
 
 [dev_dependencies]
 asphalt = { name = "pesde/asphalt", version = "^2.0.1", target = "lune" }

@@ -7,6 +7,6 @@ style = "nested"
 strip_extensions = true
 content = true
 
-[inputs.assets]
+[inputs.Assets]
 path = "assets/**/*"
 output_path = "src/client"

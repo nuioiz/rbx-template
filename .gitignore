@@ -1,12 +1,12 @@
-# Build
+# Build artifacts
 /*.rbxl
 /*.rbxlx
 
-# Studio
+# Roblox Studio
 /*.rbxl.lock
 /*.rbxlx.lock
 
-# Sourcemap
+# Rojo
 /sourcemap.json
 
 # Pesde
