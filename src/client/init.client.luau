@@ -1,8 +1,7 @@
-print("Hello world, from client!", 1, 41414, "hi")
+const Net = require("@self/Net")
 
-local Assets = require("@self/Assets")
-local add = require("@game/ReplicatedFirst/Client/add")
+print("Hello world, from client!")
 
-print(Assets)
-
-add(1, 2)
+Net.MyFirstEvent.On(function(data: string)
+	print(data)
+end)

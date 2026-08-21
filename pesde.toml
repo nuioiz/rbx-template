@@ -19,6 +19,7 @@ default = "https://github.com/UpliftGames/wally-index"
 
 [dev_dependencies]
 asphalt = { name = "pesde/asphalt", version = "^2.0.1", target = "lune" }
+blink = { name = "1axen/blink", version = "^0.18.8", target = "lune" }
 luau_lsp = { name = "pesde/luau_lsp", version = "^1.68.0", target = "lune" }
 rojo = { name = "pesde/rojo", version = "^7.7.0", target = "lune" }
 scripts = { name = "pesde/scripts_rojo", version = "^0.2.0", target = "lune" }

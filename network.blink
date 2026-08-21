@@ -1,0 +1,9 @@
+option ClientOutput = "src/client/Net.luau"
+option ServerOutput = "src/server/Net.luau"
+
+event MyFirstEvent {
+    from: Server,
+    type: Reliable,
+    call: SingleSync,
+    data: string
+}

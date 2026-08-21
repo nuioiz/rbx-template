@@ -21,5 +21,9 @@
 src/client/Assets.luau
 src/client/Assets.d.ts
 
+# Blink
+src/client/Net.luau
+src/server/Net.luau
+
 # Secrets
 /.env
