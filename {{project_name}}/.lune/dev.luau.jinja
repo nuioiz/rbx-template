@@ -1,0 +1,23 @@
+const process = require("@lune/process")
+
+const function run(cmd: string, args: { string })
+	print("> " .. cmd .. " " .. table.concat(args, " "))
+	const result = process.exec(cmd, args, { stdio = "inherit" })
+	if not result.ok then
+		error(`{cmd} failed with exit code {result.code}`)
+	end
+end
+
+run("lune", { "run", "build" })
+
+const file = "{{project_name}}.rbxl"
+if process.os == "windows" then
+	run("cmd", { "/c", "start", "", file })
+elseif process.os == "macos" then
+	run("open", { file })
+else
+	run("xdg-open", { file })
+end
+
+print("Starting rojo serve (Ctrl+C to stop)")
+run("rojo", { "serve" })

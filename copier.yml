@@ -1,0 +1,7 @@
+project_name:
+  type: str
+  help: What is your project name?
+
+pesde_scope:
+  type: str
+  help: What is your pesde scope (usually your GitHub username)?

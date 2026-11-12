@@ -1,0 +1,40 @@
+{
+  "name": "{{project_name}}",
+  "emitLegacyScripts": false,
+  "tree": {
+    "$className": "DataModel",
+
+    "Lighting": {
+      "$properties": {
+        "Technology": "Future"
+      }
+    },
+
+    "ReplicatedStorage": {
+      "client": {
+        "$path": "src/client"
+      },
+      "shared": {
+        "$path": "src/shared"
+      }
+    },
+
+    "ServerScriptService": {
+      "server": {
+        "$path": "src/server"
+      }
+    },
+
+    "SoundService": {
+      "$properties": {
+        "RespectFilteringEnabled": true
+      }
+    },
+
+    "Workspace": {
+      "$properties": {
+        "LuauTypeCheckMode": "Strict"
+      }
+    }
+  }
+}

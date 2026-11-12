@@ -1,0 +1,15 @@
+const process = require("@lune/process")
+
+const function run(cmd: string, args: { string })
+	print("> " .. cmd .. " " .. table.concat(args, " "))
+	const result = process.exec(cmd, args, { stdio = "inherit" })
+	if not result.ok then
+		error(`{cmd} failed with exit code {result.code}`)
+	end
+end
+
+run("pesde", { "install" })
+run("blink", { "net" })
+run("rojo", { "build", "-o", "{{project_name}}.rbxl" })
+
+print("Build complete")
